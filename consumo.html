@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Json</title>
+</head>
+<body>
+    <div id="alunos"></div>
+
+    <script>
+        const alunos = [
+            {
+                "id": 1,
+                "nome": "Cléber Machado",
+                "idade": 23,
+                "nota": 9.5,
+                "disciplinas": ["Matemática", "Português", "Ciências"]
+            },
+            {
+                "id": 2,
+                "nome": "Marcos Assunção",
+                "idade": 18,
+                "nota": 8.7,
+                "disciplinas": ["História", "Geografia", "Inglês"]
+            },
+            {
+                "id": 3,
+                "nome": "Mariana Cabral",
+                "idade": 16,
+                "nota": 6.5,
+                "disciplinas": ["Física", "Química", "Educação Física"]
+            }
+        ];
+
+        const alunosContainer = document.getElementById("alunos");
+
+        alunos.forEach(aluno => {
+            const alunoDiv = document.createElement("div");
+            alunoDiv.innerHTML = `
+                <h2>${aluno.nome}</h2>
+                <p>Idade: ${aluno.idade}</p>
+                <p>Nota: ${aluno.nota}</p>
+                <p>Disciplinas: ${aluno.disciplinas.join(", ")}</p>
+            `;
+            alunosContainer.appendChild(alunoDiv);
+        });
+    </script>
+</body>
+</html>
+
+
+
+    
